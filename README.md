@@ -4,7 +4,7 @@
 
 A minimal calculator with a dark terminal aesthetic. Part of the DK daily frontend project series.
 
-🔗 **Live Demo:** Coming soon
+🔗 **Live Demo:** https://calculator-dk.vercel.app/
 
 ---
 
