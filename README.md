@@ -1,49 +1,71 @@
-# Calculator — DK Project #3
+# Calculator_ 
 
-> Built with React + Vite
+> DK Project #4 | Built with React + Vite
 
-A minimal calculator with a dark terminal aesthetic. Part of the DK daily frontend project series.
+A clean, minimal calculator with a dark terminal aesthetic. Built as part of a 30-day frontend project challenge.
 
-🔗 **Live Demo:** https://calculator-dk.vercel.app/
+🔗 **Live Demo:** [calculator-dk.vercel.app](https://calculator-dk.vercel.app/)
 
 ---
 
 ## Features
 
-- ➕➖✖️➗ Basic arithmetic
-- % and +/- toggle
-- ⌫ Backspace
+- ➕➖✖️➗ Basic arithmetic operations
+- % percentage and +/- toggle
+- ⌫ Backspace to delete last digit
+- 🖥️ Expression display (shows full calculation)
 - ⌨️ Full keyboard support
-- Expression display
+- 📐 Auto font resize for long numbers
 
 ---
 
 ## Tech Stack
 
-- **React** · **Vite** · **CSS** · **Vercel**
+- **React** — UI & state management
+- **Vite** — build tool
+- **CSS** — custom styling, no UI library
+- **Vercel** — deployment
 
 ---
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/dikarahmat/calculator-app.git
-cd calculator-app
+# Clone the repo
+git clone https://github.com/dikarahmat/calculator-dk.git
+
+# Install dependencies
+cd calculator-dk
 npm install
+
+# Run locally
 npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## Project Structure
+
+```
+src/
+  components/
+    Display.jsx     # Shows current number & expression
+    Keypad.jsx      # Grid of calculator buttons
+  App.jsx           # Main logic & state management
+  App.css           # Global styles
 ```
 
 ---
 
-## Keyboard Shortcuts
+## What I Learned
 
-| Key | Action |
-|-----|--------|
-| `0-9` | Input |
-| `+ - * /` | Operators |
-| `Enter` | Calculate |
-| `Backspace` | Delete |
-| `Escape` | Clear |
+- Managing complex state with multiple `useState`
+- Handling keyboard events with `useEffect`
+- Conditional styling based on active state
+- Building reusable button components with props
+- Floating point precision handling in JavaScript
 
 ---
 
