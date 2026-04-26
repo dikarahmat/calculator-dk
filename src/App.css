@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap");
+
+:root {
+  --bg: #0d0d0d;
+  --surface: #161616;
+  --surface2: #1f1f1f;
+  --border: #2a2a2a;
+  --accent: #00ff87;
+  --accent2: #00cc6a;
+  --operator: #7c3aed;
+  --operator-hover: #6d28d9;
+  --equals: #00ff87;
+  --text: #f0f0f0;
+  --text-muted: #555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  font-family: "Space Mono", monospace;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,255,135,0.06) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 360px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  justify-content: center; /* tambahin ini */
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.num { color: var(--accent); }
+
+.app-title {
+  font-family: "Syne", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.accent { color: var(--accent); }
+
+.app-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  letter-spacing: 0.05em;
+}
+
+.calculator {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.display {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px 16px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.expression {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  min-height: 18px;
+}
+
+.current {
+  font-family: "Space Mono", monospace;
+  font-size: 58px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  word-break: break-all;
+  text-align: right;
+  transition: font-size 0.1s;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: none;
+  border-radius: 12px;
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.08s, filter 0.08s;
+  color: var(--text);
+}
+
+.key:active { transform: scale(0.92); }
+.key:hover { filter: brightness(1.2); }
+
+.key-number { background: var(--surface2); }
+.key-function { background: #222; color: #aaa; font-size: 13px; }
+.key-operator { background: var(--operator); font-size: 20px; }
+.key-operator.key-active { background: var(--text); color: var(--operator); }
+.key-equals { background: var(--equals); color: #0d0d0d; font-size: 20px; }
+
+.hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 16px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+kbd {
+  background: var(--surface2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+}
